@@ -1,0 +1,17 @@
+{
+  "name": "privacyguard-ai",
+  "version": "1.0.0",
+  "description": "Contextual Data Privacy for LLM Pipelines - MERN + AI",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "seed": "cd backend && node seed.js",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down"
+  },
+  "author": "PrivacyGuard AI",
+  "license": "MIT"
+}
