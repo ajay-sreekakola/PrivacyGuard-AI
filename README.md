@@ -2,7 +2,7 @@
 
 **Contextual Data Privacy for LLM Pipelines**
 
-PrivacyGuard AI is a full-stack MERN application that protects sensitive data throughout AI-driven systems — from prompt injection to RAG pipelines — using a multi-layer detection engine combining regex, NLP, and LLM-based contextual analysis.
+PrivacyGuard AI is a full-stack MERN application that protects sensitive data throughout AI-driven systems — from prompt injection to RAG pipelines — using a multi-layer detection engine combining regex, NLP, and AI-based contextual analysis.
 
 ---
 
@@ -17,7 +17,7 @@ PrivacyGuard AI is a full-stack MERN application that protects sensitive data th
 
 ### Application Features
 - 🔍 **Privacy Scanner** — Paste any text; get instant multi-layer risk assessment + auto-redacted output
-- 🤖 **Safe LLM Proxy** — Send prompts through PrivacyGuard BEFORE they reach Claude/ChatGPT; response is also scanned
+- 🤖 **Safe LLM Proxy** — Send prompts through PrivacyGuard BEFORE they reach any LLM; response is also scanned
 - 🗄️ **Embedding Privacy** — Protect data in RAG/vector DB pipelines (pseudonymization, chunk analysis, differential privacy)
 - 📊 **Compliance Reports** — Auto-generate HIPAA, GDPR, PCI-DSS, ITAR, SOC2 reports per scan or date range
 - 📋 **Policy Engine** — Custom detection rules per sector with compliance framework tagging
@@ -48,7 +48,7 @@ PrivacyGuard AI is a full-stack MERN application that protects sensitive data th
 │  │          Privacy Engine (3-Layer)                │    │
 │  │  Layer 1: Regex Patterns (20+ types)            │    │
 │  │  Layer 2: NLP Entity Recognition                │    │
-│  │  Layer 3: Claude AI Contextual Analysis         │    │
+│  │  Layer 3: AI Contextual Analysis                │    │
 │  └─────────────────────────────────────────────────┘    │
 │                                                          │
 │  Embedding Service · Compliance Reporter · Audit Logger  │
@@ -67,7 +67,7 @@ PrivacyGuard AI is a full-stack MERN application that protects sensitive data th
 ### Prerequisites
 - Node.js 18+
 - MongoDB 6+ (local or Atlas)
-- Anthropic API key (optional — Layer 3 AI analysis)
+- AI API key (optional — Layer 3 AI analysis)
 
 ### 1. Clone and install
 
@@ -78,7 +78,7 @@ cd privacyguard
 # Backend
 cd backend
 cp .env.example .env
-# Edit .env and add your ANTHROPIC_API_KEY
+# Edit .env and add your AI_API_KEY
 npm install
 
 # Frontend
@@ -93,7 +93,7 @@ Edit `backend/.env`:
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/privacyguard
 JWT_SECRET=your_super_secret_key_here
-ANTHROPIC_API_KEY=sk-ant-...        # Get from console.anthropic.com
+AI_API_KEY=your_api_key_here
 CLIENT_URL=http://localhost:3000
 NODE_ENV=development
 ```
@@ -258,7 +258,7 @@ privacyguard/
 
 ## 🧠 AI Integration
 
-PrivacyGuard uses Claude (`claude-sonnet-4-20250514`) for Layer 3 contextual analysis. It specifically detects:
+PrivacyGuard uses a large language model via REST API for Layer 3 contextual analysis. It specifically detects:
 
 - **Aggregation risk** — when combining non-sensitive pieces reveals sensitive data
 - **Inference risk** — information that enables re-identification of anonymized data
@@ -287,4 +287,4 @@ MIT — free to use, modify, and distribute.
 
 ---
 
-**Built with:** MongoDB · Express.js · React · Node.js · Claude AI · Recharts · Lucide Icons
+**Built with:** MongoDB · Express.js · React · Node.js · AI API · Recharts · Lucide Icons
